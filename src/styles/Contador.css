@@ -1,0 +1,21 @@
+.contador-container {
+  display: grid; /*Necesario lo vuelve cuadricula*/
+  align-items: center; /*centra verticalmente*/
+  justify-content: center;
+}
+
+.contador {
+  background-color: #f0db4f;
+  min-width: 300px;
+  height: 300px;
+  border: 6px solid white;
+  border-radius: 15px;
+  margin: 5px;
+  text-align: center;
+  font-size: 70px;
+  color: #323330;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

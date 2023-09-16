@@ -1,0 +1,55 @@
+* {
+  padding-top: 10px;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color: #323330;
+}
+main {
+  display: grid; /*Necesario lo vuelve cuadricula*/
+  align-items: center; /*centra verticalmente*/
+  justify-content: center; /*sentra horirontalmente*/
+}
+
+.titulo {
+  font-family: 'Cascadia Code', monospace;
+  font-size: 60px;
+  font-weight: bold;
+  color: rgb(100, 95, 95);
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.reloj {
+  display: flex;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  margin-left: 100px;
+  font-size: 60px;
+  border: 2px solid white;
+  border-radius: 7px;
+  padding: 40px;
+  width: 120px;
+}
+
+@media (width < 725px){
+  .reloj{
+    margin: 0;
+    padding: 20px 0 20px 0;
+    border: none
+  }
+  
+  body, html, #root {
+    padding-top: 0;
+  }
+}

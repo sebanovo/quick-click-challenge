@@ -1,0 +1,33 @@
+.boton-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 250px;
+  height: 80px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 5px;
+  cursor: pointer; /*Cuando el cursor encima sale una manito*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #3c873a;
+}
+
+.boton-click {
+  background-color: #e34c26;
+}
+
+.boton-reiniciar {
+  background-color: #2565ae;
+}
