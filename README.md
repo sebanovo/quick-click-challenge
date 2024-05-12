@@ -18,6 +18,7 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
 ```bash
 # Clona este repositorio a tu máquina local utilizando Git
 git clone https://github.com/sebanovo/button.git <any-name>
+```
 
 # Navega al directorio del proyecto
 cd <any-name>
@@ -26,6 +27,7 @@ cd <any-name>
 npm install
 
 # Inicia la aplicación
+
 ```
 npm run start
 ```
