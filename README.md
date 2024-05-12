@@ -21,7 +21,10 @@ git clone https://github.com/sebanovo/button.git <any-name>
 ```
 
 # Navega al directorio del proyecto
+
+```
 cd <any-name>
+```
 
 # Instala las dependencias del proyecto
 npm install
