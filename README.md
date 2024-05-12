@@ -17,15 +17,15 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
 
 ```bash
 # Clona este repositorio a tu máquina local utilizando Git
-git clone https://github.com/SebastianINF/Boton.git
+git clone https://github.com/sebanovo/button.git <any-name>
 
 # Navega al directorio del proyecto
-cd tu-proyecto-react
+cd <any-name>
 
 # Instala las dependencias del proyecto
 npm install
 
 # Inicia la aplicación
-npm start
-# Boton
-# Boton
+```
+npm run start
+```
