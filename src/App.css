@@ -15,6 +15,9 @@ main {
 
 .titulo {
   font-family: 'Cascadia Code', monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 60px;
   font-weight: bold;
   color: rgb(100, 95, 95);
@@ -33,20 +36,13 @@ h2 {
   display: flex;
   justify-content: center;
   color: white;
-  position: absolute;
-  margin-left: 100px;
   font-size: 60px;
-  border: 2px solid white;
-  border-radius: 7px;
-  padding: 40px;
   width: 120px;
 }
 
 @media (width < 725px){
   .reloj{
     margin: 0;
-    padding: 20px 0 20px 0;
-    border: none
   }
   
   body, html, #root {
