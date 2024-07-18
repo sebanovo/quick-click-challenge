@@ -2,28 +2,33 @@ import './App.css'
 import { useState, useEffect, useRef } from 'react'
 import Boton from './Components/Boton'
 import Contador from './Components/Contador'
+
+const SCORE_KEY = 'score'
+const CLOCK_LIMIT = 10
+
 export default function App() {
   const [count, setCount] = useState(0)
   const [clock, setClock] = useState(0)
-  const [puntaje, setPuntaje] = useState(() => {
-    return Number(window.localStorage.getItem('score'))
+  const [score, setscore] = useState(() => {
+    return Number(window.localStorage.getItem(SCORE_KEY))
   })
-  const refReloj = useRef(null)
+  const $refCounter = useRef(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setClock(prevClock => {
-        if (prevClock === 10) {
+        if (prevClock === CLOCK_LIMIT) {
           setClock(1)
-          setPuntaje(prevPuntaje => {
-            let score = refReloj.current.innerHTML
-            if (prevPuntaje < parseInt(score)) {
-              window.localStorage.setItem('score', score)
-              return score
+          setscore(prevScore => {
+            const counterText = parseInt($refCounter.current.innerHTML)
+            if (prevScore < counterText) {
+              window.localStorage.setItem(SCORE_KEY, counterText)
+              return counterText
             }
-            return prevPuntaje
+            return prevScore
           })
           setCount(0)
+          return 1
         }
         return prevClock + 1
       })
@@ -32,16 +37,17 @@ export default function App() {
     return () => {
       clearInterval(interval)
     }
-  }, []) // El arreglo de dependencias vacío asegura que el efecto se ejecute solo una vez al montar el componente.
+  }, [])
 
-  const subirContador = () => {
+  const incrementCounter = () => {
     setCount(prevCount => prevCount + 1)
   }
 
   const reset = () => {
     setCount(0)
     setClock(0)
-    setPuntaje(0)
+    setscore(0)
+    window.localStorage.removeItem(SCORE_KEY)
   }
 
   return (
@@ -49,13 +55,13 @@ export default function App() {
       <main>
         <h1 className='titulo'>
           Quick Click
-          <div className='reloj' ref={refReloj}>
+          <div className='reloj'>
             {clock}
           </div>
         </h1>
-        <h2>Mejor puntuación es: {puntaje}</h2>
-        <Contador numberClicks={count} subirContador={subirContador}></Contador>
-        <Boton esBotonClick={false} texto='reset' handleClik={reset}></Boton>
+        <h2>Mejor puntuación es: {score}</h2>
+        <Contador numberOfClicks={count} incrementCounter={incrementCounter} ref={$refCounter}></Contador>
+        <Boton isClickButton={false} text='reset' handleClik={reset}></Boton>
       </main>
     </>
   )

@@ -1,13 +1,13 @@
 import '../styles/Boton.css'
 
-export default function Boton({ texto, esBotonClick, handleClik }) {
+export default function Boton({ text, isClickButton, handleClik }) {
   return (
     <div className="boton-container">
       <button
         onClick={handleClik}
-        className={esBotonClick ? 'boton-click' : 'boton-reiniciar'}
+        className={isClickButton ? 'boton-click' : 'boton-reiniciar'}
       >
-        {texto}
+        {text}
       </button>
     </div>
   )
